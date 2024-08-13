@@ -1,7 +1,7 @@
 """
 this file specifies the different versions of marioai
 """
-from gym.envs.registration import register
+from gymnasium.envs.registration import register
 
 from . import levels
 

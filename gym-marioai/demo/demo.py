@@ -1,6 +1,6 @@
 import random
 
-import gym
+import gymnasium as gym
 import gym_marioai
 from gym_marioai import levels
 

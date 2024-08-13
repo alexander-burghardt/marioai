@@ -3,7 +3,7 @@ import pstats
 import time
 import os
 
-import gym
+import gymnasium as gym
 import gym_marioai
 
 if __name__ == '__main__':
