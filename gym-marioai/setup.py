@@ -2,19 +2,19 @@ from setuptools import setup, find_packages
 
 setup(
     name="gym_marioai",
-    version="0.0.1",
+    version="0.0.2",
     author="",
     author_email="",
-    description="gym environment for marioai",
+    description="gym(nasium) environment for marioai",
     # long_description=long_description,
     # long_description_content_type="text/markdown",
     url="",
     packages=find_packages(),
     classifiers=[],
-    python_requires='>=3.6',
+    python_requires='>=3.11',
     install_requires=[
         'numpy', 
-        'gym>=0.17.2', 
+        'gymnasium', 
         'protobuf==3.14.0',
         'keyboard'],
 

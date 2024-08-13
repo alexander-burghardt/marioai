@@ -3,7 +3,7 @@
 """
 from collections import deque
 import numpy as np
-import gym
+import gymnasium as gym
 from gym import spaces
 
 from ..protobuf_socket import ProtobufSocket
