@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="gym_marioai",
-    version="0.0.2",
+    version="0.0.3",
     author="",
     author_email="",
     description="gym(nasium) environment for marioai",

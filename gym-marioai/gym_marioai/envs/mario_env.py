@@ -128,7 +128,7 @@ class MarioEnv(gym.Env):
     def render(self, mode='human'):
         pass
 
-    def reset(self, seed=None, difficulty=None, level_path="None", render=None):
+    def reset(self, seed=None, difficulty=None, level_path="None", render=None, options = None):
         """
         reset the environment, return new initial state
         """
@@ -155,7 +155,7 @@ class MarioEnv(gym.Env):
         self.socket.send_reset()
         state_msg = self.socket.receive()
         self.__reset_cached_data(state_msg)
-        return self.__extract_observation(state_msg)
+        return self.__extract_observation(state_msg), self.__extract_info(state_msg)
 
     def step(self, action: int):
         """
@@ -174,12 +174,13 @@ class MarioEnv(gym.Env):
 
         observation = self.__extract_observation(state_msg)
         reward = self.__extract_reward(state_msg)
-        done = self.__extract_done(state_msg)
+        terminated = self.__extract_done(state_msg)
+        truncated = False
         info = self.__extract_info(state_msg)
 
         self.__update_cached_data(state_msg)
 
-        return observation, reward, done, info
+        return observation, reward, terminated, truncated, info
 
     def __reset_cached_data(self, res:MarioMessage):
         """
